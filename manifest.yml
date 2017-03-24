@@ -1,0 +1,19 @@
+applications:
+- path: .
+  memory: 2048M
+  instances: 1
+  domain: mybluemix.net
+  name: dnyc
+  host: dnyc
+  disk_quota: 1024M
+  services:
+  - performance-monitoring-auto
+  - Compose for MySQL-11
+  - Compose for Elasticsearch-qz
+  - ClearDB MySQL Database-0d
+  - Retrieve and Rank-t8
+  env:
+    CF_STAGING_TIMEOUT: 15
+    CF_STARTUP_TIMEOUT: 15
+    COMPOSER_PATH: htdocs
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git
